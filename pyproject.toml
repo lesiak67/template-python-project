@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+exclude = '''
+/(
+  \.git
+| \.venv
+| build
+| dist
+)/
+'''
+
+[tool.pylint.MASTER]
+jobs = 1
+
+[tool.pylint.FORMAT]
+max-line-length = 88
+indent-string = "    "
+
+[tool.pylint."MESSAGES CONTROL"]
+# Optional: relax docstring requirements for small exercises
+disable = [
+  "C0114",  # missing-module-docstring
+  "C0115",  # missing-class-docstring
+  "C0116",  # missing-function-docstring
+]
+
+[tool.pylint.TYPECHECK]
+# tkinter is used for GUI; avoid false positives if third-party stubs are absent
+ignored-modules = ["tkinter"]
