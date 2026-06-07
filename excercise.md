@@ -35,7 +35,7 @@ Celem ćwiczenia jest utworzenie repozytorium z programem w Pythonie, które bę
 - uruchamiania testów
 - formatowania kodu i sprawdzania formatowania
 - analizy statyczne, (linting)
-- czyszczenia repozytorium ze zbędnych plików
+- czyszczenia repozytorium ze zbędnych plikóws
 
 
 ### Krok 5: Workflow CI
