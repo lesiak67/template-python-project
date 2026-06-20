@@ -38,6 +38,3 @@ jobs:
       shell: cmd
 
     
-    - name: Uruchomienie aplikacji (run)
-      run: scripts\run.bat
-      shell: cmd
