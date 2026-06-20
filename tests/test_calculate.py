@@ -1,6 +1,7 @@
 import pytest
 from main import calculate
 
+
 @pytest.mark.parametrize(
     "expr, expected",
     [
