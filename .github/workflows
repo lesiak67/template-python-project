@@ -1,0 +1,43 @@
+name: Project Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Pobranie repozytorium (Checkout)
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13.14' 
+
+
+    - name: Inicjalizacja środowiska (init_venv)
+      run: scripts\init_venv.bat
+      shell: cmd
+
+    - name: Formatowanie kodu (code_formatting)
+      run: scripts\code_formatting.bat
+      shell: cmd
+
+    - name: Lintowanie kodu (lint)
+      run: scripts\lint.bat
+      shell: cmd
+
+    - name: Uruchomienie testów (test)
+      run: scripts\test.bat
+      shell: cmd
+
+    
+    - name: Uruchomienie aplikacji (run)
+      run: scripts\run.bat
+      shell: cmd
